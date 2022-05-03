@@ -4,12 +4,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -30,6 +31,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('delete-post/{post_id}', [App\Http\Controllers\Admin\PostController::class, 'delete']);
 
     Route::get('users', [App\Http\Controllers\Admin\UserController::class, 'index']);
-    Route::get('user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'edit']);
-    Route::put('update-user/{user_id}',[App\Http\Controllers\Admin\UserController::class, 'update']);
+    Route::get('user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+    Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
 });
