@@ -7,7 +7,7 @@
 
         <div class="card-header">
             <h4>Edit Posts
-                <a href="{{ url('admin/post') }}" class="btn btn-primary float-end">Back</a>
+                <a href="{{ url('admin/posts') }}" class="btn btn-primary float-end">Back</a>
             </h4>
         </div>
         <div class="card-body">
