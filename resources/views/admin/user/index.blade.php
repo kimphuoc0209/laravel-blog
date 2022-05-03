@@ -32,7 +32,7 @@
                         <td>{{ $item->email }}</td>
                         <td>{{ $item->role_as == '1' ? 'Admin' : 'User' }}</td>
                         <td>
-                            <a href="{{url('admin/post/'.$item->id)}}" class="btn btn-success">Edit</a>
+                            <a href="{{url('admin/user/'.$item->id)}}" class="btn btn-success">Edit</a>
                         </td>
 
                     </tr>
