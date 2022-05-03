@@ -27,7 +27,7 @@
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="mb-3">
                         <label for="">Category Name</label>
                         <input type="text" name="name" value="{{ $category->name }}" class="form-control">
@@ -38,8 +38,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Description</label>
-                        <textarea name="description" rows="5"
-                            class="form-control">{{ $category->description }}</textarea>
+                        <textarea name="description" rows="5" id="mySummernote" class="form-control">{{ $category->description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label>Image</label>
@@ -52,13 +51,11 @@
                     </div>
                     <div class="mb-3">
                         <label>Meta Description</label>
-                        <textarea name="meta_description" rows="3"
-                            class="form-control">{{ $category->meta_description }}</textarea>
+                        <textarea name="meta_description" rows="3" class="form-control">{{ $category->meta_description }}</textarea>
                     </div>
                     <div class="mb-3">
                         <label>Meta Keywords</label>
-                        <textarea name="meta_keyword" rows="3"
-                            class="form-control">{{ $category->meta_keyword }}</textarea>
+                        <textarea name="meta_keyword" rows="3" class="form-control">{{ $category->meta_keyword }}</textarea>
                     </div>
                     <h6>Status Mode</h6>
                     <div class="row">
