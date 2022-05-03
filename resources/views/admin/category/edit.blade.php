@@ -23,7 +23,7 @@
 
 
 
-                <form action="{{ url('admin/update-category/' . $category->id) }}" method="POST"
+                <form action="{{ url('admin/update-category/' .$category->id) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

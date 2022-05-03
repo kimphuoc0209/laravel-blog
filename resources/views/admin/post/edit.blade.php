@@ -42,13 +42,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Description</label>
-<<<<<<< HEAD
-                    <textarea name="description" id="mySummernote" class="form-control" value={{
-                        $post->description }} rows="4"></textarea>
-=======
-                    <textarea name="description" class="form-control" rows=" 4">{{
+                    <textarea name="description" id="mySummernote" class="form-control" rows=" 4">{{
                     $post->description }}</textarea>
->>>>>>> 73c70b2a63b54149610b3a2c94e6d218a5730cdf
                 </div>
                 <div class="mb-3">
                     <label for="">Youtube Iframe Link</label>
