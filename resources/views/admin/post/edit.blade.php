@@ -34,36 +34,36 @@
                 </div>
                 <div class="mb-3">
                     <label for="">Post Name</label>
-                    <input type="text" name="name" class="form-control" value={{ $post->name }}/>
+                    <input type="text" name="name" class="form-control" value="{{ $post->name }}" />
                 </div>
                 <div class="mb-3">
                     <label for="">Slug</label>
-                    <input type="text" name="slug" class="form-control" value={{ $post->slug }}/>
+                    <input type="text" name="slug" class="form-control" value="{{ $post->slug }}" />
                 </div>
                 <div class="mb-3">
                     <label for="">Description</label>
-                    <textarea name="description" class="form-control" value={{
-                        $post->description }} rows="4"></textarea>
+                    <textarea name="description" class="form-control" rows=" 4">{{
+                    $post->description }}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="">Youtube Iframe Link</label>
-                    <input type="text" name="yt_iframe" class="form-control" value={{ $post->yt_iframe }}/>
+                    <input type="text" name="yt_iframe" class="form-control" value="{{ $post->yt_iframe }}" />
                 </div>
 
                 <h4>SEO Tags</h4>
                 <div class="mb-3">
                     <label for="">Meta Title</label>
-                    <input type="text" name="meta_title" class="form-control" value={{ $post->meta_title }}/>
+                    <input type="text" name="meta_title" class="form-control" value="{{ $post->meta_title }}" />
                 </div>
                 <div class="mb-3">
                     <label for="">Meta Description</label>
-                    <textarea name="meta_description" class="form-control" value={{!!
-                        $post->meta_description !!}} rows="3"></textarea>
+                    <textarea name="meta_description" class="form-control" value="{!!
+                        $post->meta_description !!}" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="">Meta Keyword</label>
-                    <textarea name="meta_keyword" class="form-control" rows="3" value={{!!
-                        $post->meta_keyword !!}}></textarea>
+                    <textarea name="meta_keyword" class="form-control" rows="3" value="{!!
+                        $post->meta_keyword !!}"></textarea>
                 </div>
 
                 <h4>Status</h4>
