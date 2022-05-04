@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <div class="category-heading">
-                        <h4>{{ $category->name }}</h4>
+                        <h4 class='mb-0'>{{ $category->name }}</h4>
                     </div>
 
                     @forelse ($post as $postitem)
