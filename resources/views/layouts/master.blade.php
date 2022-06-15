@@ -27,13 +27,13 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
     <style>
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
             padding: 0 !important;
             margin: 0 !important;
         }
 
         div.dataTables_wrapper div.dataTables_length select {
-            width: 50%;
+            width: 50% !important;
         }
     </style>
 </head>
@@ -81,6 +81,8 @@
         } );
     </script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+
+    @yield('scripts')
 </body>
 
 </html>

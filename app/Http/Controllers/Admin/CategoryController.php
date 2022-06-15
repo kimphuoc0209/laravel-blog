@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\VarDumper\Cloner\Data;
 use App\Http\Requests\Admin\CategoryFormRequest;
-use Illuminate\Support\Str; 
+use Illuminate\Support\Str;
+
 class CategoryController extends Controller
 {
     public function index()
@@ -84,9 +85,9 @@ class CategoryController extends Controller
 
         return redirect('admin/category')->with('message', 'Category Updated Successfully');
     }
-    public function destroy($category_id)
+    public function destroy(Request $request)
     {
-        $category = Category::find($category_id);
+        $category = Category::find($request->category_delete_id);
         if ($category) {
             $destination = 'uploads/category/' . $category->image;
             if (File::exists($destination)) {
@@ -95,11 +96,8 @@ class CategoryController extends Controller
             $category->posts()->delete();
             $category->delete();
             return redirect('admin/category')->with('message', 'Category Deleted with its Posts Successfully');
-        }
-        else
-        {
+        } else {
             return redirect('admin/category')->with('message', 'No Category ID Found');
-
         }
     }
 }
