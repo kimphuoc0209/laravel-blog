@@ -14,7 +14,7 @@
     <div class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-green">
             <div class="container">
-                <a href="" class="navbar-brand d-inline d-sm-inline d-md-inline">
+                <a href="" class="navbar-brand d-inline d-sm-inline d-md-none">
                 <img src="{{ asset('assets/img/logo.png') }}" style="width: 140px" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -41,18 +41,29 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li> --}}
-                        @php
-                            $categories = App\Models\Category::where('navbar_status', '0')
-                                ->where('status', '0')
-                                ->get();
+                        
+                        @php 
+                            $categories = App\Models\Category::where('navbar_status', '0')->where('status', '0')->get();
+                    
                         @endphp
                         @foreach ($categories as $cateitem)
-                            <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ url('tutorial/' . $cateitem->slug) }}">{{ $cateitem->name }}</a>
-                            </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="{{ url('tutorial/' . $cateitem->slug) }}">{{ $cateitem->name }}</a>
+                        </li>
                         @endforeach
-
+                        @if (Auth::check())
+                        <li>
+                            <a href="{{ route('logout') }}" class="nav-link btn-danger"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method = "POST" class="d-none">
+                            @csrf
+                              </form>
+                        </li>
+                        @endif
                     </ul>
 
                 </div>
