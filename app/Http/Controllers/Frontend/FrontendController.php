@@ -6,14 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Setting;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        $all_categories = Category::where('status','0')->get();
+        $setting = Setting::find(1);
+        $all_categories = Category::where('status', '0')->get();
         $latest_posts = Post::where('status', '0')->orderBy('created_at', 'DESC')->get()->take(15);
-        return view('frontend.index', compact('all_categories','latest_posts'));
+        return view('frontend.index', compact('all_categories', 'latest_posts', 'setting'));
     }
     public function viewCategoryPost(string $category_slug)
     {
@@ -37,5 +39,4 @@ class FrontendController extends Controller
             return redirect('/');
         }
     }
-    
 }

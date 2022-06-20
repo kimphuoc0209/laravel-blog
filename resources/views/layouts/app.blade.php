@@ -14,8 +14,13 @@
 
     <meta name="author" content="TPV of Web IT">
 
+    @php
+    $setting = App\Models\Setting::find(1);
+    @endphp
 
-
+    @if ($setting)
+    <link rel="shorcut icon" href="{{ asset('uploads/setting/'.$setting->favicon) }}">
+    @endif
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">

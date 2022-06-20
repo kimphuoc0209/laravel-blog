@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', "Web IT blogging Website")
+@section('title', "$setting->meta_title")
 
-@section('meta_description', "Web IT blogging Website")
+@section('meta_description', "$setting->meta_description")
 
-@section('meta_keyword', "Web IT blogging Website")
+@section('meta_keyword', "$setting->meta_keyword")
 
 @section('content')
 <div class="bg-danger py-5">
@@ -48,10 +48,10 @@
                 <h4>TPV of Web IT</h4>
                 <div class="underline"></div>
                 <p>
-                Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
-                Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
+                    Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
+                    Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
                 </p>
-                
+
             </div>
         </div>
     </div>
@@ -66,15 +66,15 @@
 
             </div>
             @foreach ($all_categories as $all_cateitem)
-                <div class="col-md-3">
-                    <div class="card card-body mb-3">
-                        <a href="{{ url('tutorial/'.$all_cateitem->slug) }}" class="text-decoration-none">
-                            <h5 class="text-dark mb-0">{{ $all_cateitem->name }}</h5>
-                        </a>
-                    </div>
+            <div class="col-md-3">
+                <div class="card card-body mb-3">
+                    <a href="{{ url('tutorial/'.$all_cateitem->slug) }}" class="text-decoration-none">
+                        <h5 class="text-dark mb-0">{{ $all_cateitem->name }}</h5>
+                    </a>
                 </div>
+            </div>
             @endforeach
-        </div>                
+        </div>
     </div>
 </div>
 
@@ -88,7 +88,8 @@
             <div class="col-md-8">
                 @foreach ($latest_posts as $latest_post_item)
                 <div class="card card-body bg-gray shadow mb-3">
-                    <a href="{{ url('tutorial/'.$latest_post_item->category->slug.'/'.$latest_post_item->slug) }}" class="text-decoration-none">
+                    <a href="{{ url('tutorial/'.$latest_post_item->category->slug.'/'.$latest_post_item->slug) }}"
+                        class="text-decoration-none">
                         <h5 class="text-dark mb-0">{{ $latest_post_item->name }}</h5>
                     </a>
                     <h6>Posted On: {{ $latest_post_item->created_at->format('d-m-Y')}}</h6>
@@ -99,8 +100,8 @@
                 <div class="border text-center p-3">
                     <h3>Advertise here</h3>
                 </div>
-            </div>  
-        </div>                
+            </div>
+        </div>
     </div>
 </div>
 
