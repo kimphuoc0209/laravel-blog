@@ -20,6 +20,7 @@ Route::get('tutorial/{category_slug}/{post_slug}', [App\Http\Controllers\Fronten
 
 //comment System
 Route::post('comments', [App\Http\Controllers\Frontend\CommentController::class, 'store']);
+Route::post('delete-comment', [App\Http\Controllers\Frontend\CommentController::class, 'destroy']);
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
