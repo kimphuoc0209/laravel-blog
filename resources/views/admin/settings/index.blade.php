@@ -39,7 +39,7 @@
                         </div>
                         <div class="mb-3">
                             <label>Description</label>
-                            <textarea name="description" class="form-control" required cols="3">@if($setting)
+                            <textarea name="description" class="form-control" required rows="3">@if($setting)
                             {{ $setting->description }} @endif</textarea>
                         </div>
 

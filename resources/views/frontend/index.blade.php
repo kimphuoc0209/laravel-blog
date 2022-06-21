@@ -1,10 +1,13 @@
 @extends('layouts.app')
 
 @section('title', "$setting->meta_title")
+{{-- @section('title', "Hello world") --}}
 
 @section('meta_description', "$setting->meta_description")
+{{-- @section('meta_description', "Hello world") --}}
 
 @section('meta_keyword', "$setting->meta_keyword")
+{{-- @section('meta_keyword', "Hello world") --}}
 
 @section('content')
 <div class="bg-danger py-5">

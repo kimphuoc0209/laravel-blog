@@ -58,18 +58,34 @@
                                 }}</a>
                         </li>
                         @endforeach
-                        @if (Auth::check())
-                        <li>
-                            <a href="{{ route('logout') }}" class="nav-link btn-danger"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
-                        </li>
-                        @endif
                     </ul>
+                    @if(!Auth::check())
+                    <div class="nav-item"
+                        style="align-content: flex-end; border-left: 1px solid white; border-right: 1px solid white;"">
+                                            <a style=" color: white; font-weight: bold" href=" {{ route('login') }}"
+                        class="nav-link nav-item">
+                        Login</a>
+                    </div>
+                    @if (Route::has('register'))
+                    <div style="align-content: flex-end; border-left: 1px solid white; border-right: 1px solid white;">
+                        <a href="{{ route('register') }}" style=" color: white; font-weight: bold"
+                            class="nav-link">Register</a>
+                    </div>
+                    @endif
+                    @endif
+                    @if (Auth::check())
+                    <div class="nav-item"
+                        style="align-content: flex-end; border-left: 1px solid white; border-right: 1px solid white;">
+                        <a style=" color: white; font-weight: bold" href=" {{ route('logout') }}"
+                            class="nav-link btn-danger nav-item"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                    @endif
 
                 </div>
             </div>
