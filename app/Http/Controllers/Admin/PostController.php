@@ -63,7 +63,7 @@ class PostController extends Controller
         $post->meta_keyword = $data['meta_keyword'];
         $post->status = $request->status == true ? '1' : '0';
         $post->created_by = Auth::user()->id;
-        $post->save();
+        $post->update();
         return redirect('admin/posts')->with('message', 'Post Update Successfully');
     }
 
