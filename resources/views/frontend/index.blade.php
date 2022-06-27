@@ -52,7 +52,6 @@
                 <div class="underline"></div>
                 <p>
                     Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
-                    Xây dựng 1 trang web sử dụng framework Laravel, CSDL MySQL
                 </p>
 
             </div>
